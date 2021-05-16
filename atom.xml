@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+  <id>http://localhost:8000/</id>
+  <title>Coming Soon!</title>
+  <subtitle><![CDATA[]]></subtitle>
+  <link href="http://localhost:8000/atom.xml" rel="self" type="application/atom+xml" />
+  <link href="http://localhost:8000/" rel="alternate" type="text/html" />
+  <updated>2021-05-16T18:54:39+02:00</updated>
+  <author>
+    <name>Coming Soon!</name>
+    <uri>http://localhost:8000/</uri>
+  </author>
+</feed>
