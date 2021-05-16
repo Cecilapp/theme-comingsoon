@@ -1,6 +1,6 @@
 # Coming Soon theme
 
-> _Coming Soon_ is a theme for [Cecil](https://cecil.app), powered by [Start Bootstrap Coming Soon](https://github.com/StartBootstrap/startbootstrap-coming-soon) and [Bootstrap](https://getbootstrap.com).
+> _Coming Soon_ is a theme for [Cecil](https://cecil.app), powered by [Start Bootstrap Coming Soon](https://github.com/StartBootstrap/startbootstrap-coming-soon) and [Bootstrap](https://getbootstrap.com), with [Netlify Forms](https://www.netlify.com/products/forms/) integration.
 
 ## Preview
 
