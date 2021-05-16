@@ -25,11 +25,8 @@
               <h5 class="mb-5">{{ site.baseline }}</h5>
               {%- block content ~%}
               {%- if page.content is empty -%}
-              {%- apply markdown_to_html -%}
-Page not found.
-
-← [Return](/)
-              {%- endapply -%}
+              <p>Page not found.</p>
+              <p><a href="{{ url() }}">← Return</a></p>
               {%- else -%}
               {{ page.content }}
               {%- endif -%}
