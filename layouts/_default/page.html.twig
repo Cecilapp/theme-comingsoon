@@ -24,11 +24,15 @@
               <h1 class="mb-3">{{ site.title }}</h1>
               <h5 class="mb-5">{{ site.baseline }}</h5>
               {%- block content ~%}
-              {% if page.content is empty %}
-              Page not found.
-              {% else %}
+              {%- if page.content is empty -%}
+              {%- apply markdown_to_html -%}
+Page not found.
+
+← [Return](/)
+              {%- endapply -%}
+              {%- else -%}
               {{ page.content }}
-              {% endif %}
+              {%- endif -%}
               {%- endblock ~%}
             </div>
           </div>
