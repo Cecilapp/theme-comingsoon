@@ -34,6 +34,10 @@ theme:
 ```yaml
 theme:
   - comingsoon
+comingsoon:
+  subscribe:
+    placeholder: Enter Email...
+    button: Notify me!
 assets:
   compile:
     variables:
@@ -42,4 +46,6 @@ assets:
 social:
   twitter:
     site: TwitterHandle
+  github:
+    username: Username
 ```
