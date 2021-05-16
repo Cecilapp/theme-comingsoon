@@ -41,11 +41,13 @@ theme:
 theme:
   - comingsoon
 comingsoon:
+  # customize subscribe form
   subscribe:
     placeholder: Enter Email...
     button: Notify me!
 assets:
   compile:
+    # customize colors
     variables:
       primary: '#69B7FF'
       secondary: '#69C748'
