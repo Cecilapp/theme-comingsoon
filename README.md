@@ -12,20 +12,10 @@ composer require cecil/theme-comingsoon
 
 ### Install Bootstrap
 
-Create a `package.json` file:
-
-```json
-{
-  "scripts": {
-    "postinstall": "cd themes/comingsoon/static && npm install"
-  }
-}
-```
-
 Run the following command:
 
 ```bash
-npm install
+cd themes/comingsoon/static && npm install
 ```
 
 ## Usage
