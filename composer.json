@@ -1,0 +1,18 @@
+{
+  "name": "cecil/theme-comingsoon",
+  "type": "cecil-theme",
+  "description": "Cecil theme: Coming Soon",
+  "keywords": ["Cecil", "theme", "coming soon"],
+  "license": "MIT",
+  "require": {
+    "cecil/theme-installer": "^1.4"
+  },
+  "extra": {
+    "name": "comingsoon",
+    "branch-alias": {
+      "dev-master": "1.x-dev"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}

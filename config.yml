@@ -1,0 +1,3 @@
+assets:
+  compile:
+    import: [node_modules]
