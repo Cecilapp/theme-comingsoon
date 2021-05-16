@@ -2,6 +2,12 @@
 
 > _Coming Soon_ is a theme for [Cecil](https://cecil.app), powered by [Start Bootstrap Coming Soon](https://github.com/StartBootstrap/startbootstrap-coming-soon) and [Bootstrap](https://getbootstrap.com).
 
+## Preview
+
+[![Coming Soon preview](https://assets.startbootstrap.com/img/screenshots/themes/coming-soon.png)](https://cecilapp.github.io/theme-comingsoon/)
+
+**[Demo](https://cecilapp.github.io/theme-comingsoon/)**
+
 ## Installation
 
 ```bash
