@@ -57,3 +57,9 @@ social:
   github:
     username: Username
 ```
+
+## License
+
+_Coming Soon_ is a free software distributed under the terms of the MIT license.
+
+© [Arnaud Ligny](https://arnaudligny.fr)
