@@ -4,7 +4,7 @@
 
 ## Preview
 
-[![Coming Soon preview](https://assets.startbootstrap.com/img/screenshots/themes/coming-soon.png)](https://cecilapp.github.io/theme-comingsoon/)
+[![Coming Soon preview](/docs/Cecil-theme-comingsoon-screenshot.png)](https://cecilapp.github.io/theme-comingsoon/)
 
 **[Demo](https://cecilapp.github.io/theme-comingsoon/)**
 
