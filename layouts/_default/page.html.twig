@@ -4,18 +4,18 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     {%~ include 'partials/metatags.html.twig' ~%}
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    <script src="{{ asset('https://use.fontawesome.com/releases/v5.15.3/js/all.js') }}" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico')|url }}" />
+    <script src="{{ asset('https://use.fontawesome.com/releases/v5.15.3/js/all.js')|url }}" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
-    {#-<link href="{{ asset('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i') }}" rel="stylesheet" />
-    <link href="{{ asset('https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i') }}" rel="stylesheet" />-#}
+    {#-<link href="{{ asset('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i')|url }}" rel="stylesheet" />
+    <link href="{{ asset('https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i')|url }}" rel="stylesheet" />-#}
     <link href="{{ asset('scss/styles.scss') }}" rel="stylesheet" />
   </head>
   <body>
     <div class="overlay"></div>
     <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-      <source src="{{ asset('mp4/bg.mp4') }}" type="video/mp4">
+      <source src="{{ asset('mp4/bg.mp4')|url }}" type="video/mp4">
     </video>
     <div class="masthead">
       <div class="masthead-bg"></div>
