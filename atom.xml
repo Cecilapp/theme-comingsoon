@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
   <id>https://cecilapp.github.io/theme-comingsoon/</id>
-  <title>Cecil</title>
-  <subtitle><![CDATA[Cecil is a CLI application, powered by PHP, that merge plain text files (written in Markdown), images and Twig templates to generate a static website.]]></subtitle>
+  <title>Coming Soon!</title>
+  <subtitle><![CDATA[Site description]]></subtitle>
   <link href="https://cecilapp.github.io/theme-comingsoon/atom.xml" rel="self" type="application/atom+xml" />
   <link href="https://cecilapp.github.io/theme-comingsoon/" rel="alternate" type="text/html" />
-  <updated>2021-12-29T00:19:57+01:00</updated>
+  <updated>2021-12-29T00:36:57+01:00</updated>
   <author>
-    <name>Arnaud Ligny</name>
-    <uri>https://arnaudligny.fr</uri>
+    <name>Coming Soon!</name>
+    <uri>https://cecilapp.github.io/theme-comingsoon/</uri>
   </author>
   <entry xml:lang="en">
     <id>https://cecilapp.github.io/theme-comingsoon/success/</id>
@@ -18,8 +18,8 @@
 <p>← <a href="../">Return</a></p>]]>
     </content>
     <link href="https://cecilapp.github.io/theme-comingsoon/success/" rel="alternate" type="text/html" />
-    <published>2021-12-29T00:19:57+01:00</published>
-    <updated>2021-12-29T00:19:57+01:00</updated>
+    <published>2021-12-29T00:36:57+01:00</published>
+    <updated>2021-12-29T00:36:57+01:00</updated>
   </entry>
   <entry xml:lang="en">
     <id>https://cecilapp.github.io/theme-comingsoon/another-page/</id>
@@ -29,7 +29,7 @@
 <p><a href="../">back</a></p>]]>
     </content>
     <link href="https://cecilapp.github.io/theme-comingsoon/another-page/" rel="alternate" type="text/html" />
-    <published>2021-12-29T00:19:55+01:00</published>
-    <updated>2021-12-29T00:19:55+01:00</updated>
+    <published>2021-12-29T00:36:55+01:00</published>
+    <updated>2021-12-29T00:36:55+01:00</updated>
   </entry>
 </feed>
