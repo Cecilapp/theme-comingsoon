@@ -30,10 +30,23 @@ jobs:
       working-directory: demo/themes/comingsoon/static
       run: npm install
 
+    - name: Set config
+      run: |
+        echo -e "title: Coming Soon!" > demo/config.yml
+        echo -e "baseline: Sign up for updates" >> demo/config.yml
+        echo -e "social:" >> demo/config.yml
+        echo -e "  twitter:" >> demo/config.yml
+        echo -e "    site: ArnaudLigny" >> demo/config.yml
+        echo -e "  github:" >> demo/config.yml
+        echo -e "    username: ArnaudLigny" >> demo/config.yml
+
     - name: Add theme
       run: |
         echo -e "theme:\n  - comingsoon" >> demo/config.yml
-        cat demo/config.yml
+        echo -e "comingsoon:" >> demo/config.yml
+        echo -e "  subscribe:" >> demo/config.yml
+        echo -e "    placeholder: Enter Email..." >> demo/config.yml
+        echo -e "    button: Notify me!" >> demo/config.yml
         rm -rf demo/layouts
 
     - name: Add content
