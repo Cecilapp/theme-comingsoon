@@ -15,9 +15,16 @@ jobs:
     - name: Create demo site
       run: php cecil.phar new:site demo
 
-    - uses: actions/checkout@master
+    - name: Install theme
+      uses: actions/checkout@master
       with:
         path: 'demo/themes/comingsoon'
+
+    - uses: actions/setup-node@v2
+
+    - name: Install Bootstrap
+      working-directory: demo/themes/comingsoon/static
+      run: npm install
 
     - name: Add theme
       run: |
@@ -25,14 +32,7 @@ jobs:
         cat demo/config.yml
         rm -rf demo/layouts
 
-    - name: Use Node.js
-      uses: actions/setup-node@v2
-
-    - name: Install Bootstrap
-      working-directory: themes/comingsoon/static
-      run: npm install
-
-    - name: Build demo
+    - name: Build
       run: php cecil.phar build -vv demo
       env:
         CECIL_CANONICALURL: 'true'
