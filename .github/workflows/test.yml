@@ -10,8 +10,7 @@ jobs:
       CECIL_BASEURL: 'https://cecilapp.github.io/theme-comingsoon/'
     environment: 
       name: production
-      #url: https://cecilapp.github.io/theme-comingsoon/
-      url: ${{ CECIL_BASEURL }}
+      url: ${{ steps.deploy_url.outputs.url }}
     steps:
     - name: Download Cecil
       run: curl -sSOL https://cecil.app/cecil.phar
@@ -48,3 +47,8 @@ jobs:
       with:
         email: arnaud@ligny.org
         build_dir: demo/_site
+
+    - name: Deploy URL
+      if: ${{ success() }}
+      id: deploy_url
+      run: echo "::set-output name=url::$CECIL_BASEURL"
