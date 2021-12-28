@@ -6,6 +6,9 @@ jobs:
   test-theme:
     name: Test theme
     runs-on: ubuntu-latest
+    environment: 
+      name: production
+      url: https://cecilapp.github.io/theme-comingsoon/
     env:
       CECIL_BASEURL: 'https://cecilapp.github.io/theme-comingsoon/'
     steps:
