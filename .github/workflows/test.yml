@@ -25,6 +25,13 @@ jobs:
         cat demo/config.yml
         rm -rf demo/layouts
 
+    - name: Use Node.js
+      uses: actions/setup-node@v2
+
+    - name: Install Bootstrap
+      working-directory: themes/comingsoon/static
+      run: npm install
+
     - name: Build demo
       run: php cecil.phar build -vv demo
       env:
