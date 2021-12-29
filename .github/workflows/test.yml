@@ -10,7 +10,7 @@ jobs:
       CECIL_BASEURL: 'https://cecilapp.github.io/theme-comingsoon/'
       CECIL_CANONICALURL: 'true'
     environment: 
-      name: production
+      name: github-pages
       url: ${{ steps.deploy_url.outputs.url }}
     steps:
     - name: Download Cecil
