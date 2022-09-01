@@ -55,7 +55,7 @@ jobs:
       run: |
         echo -e "We're working hard to finish the development of this site.  \nOur target launch date is **January 2022!**  \nSign up for updates using the form below!" > demo/content/index.md
         echo -e "**Thank you**, your submission has been received.\n\n← [Return](../)" > demo/content/success.md
-        rm demo/content/another-page.md
+        rm demo/pages/another-page.md
 
     - name: Build
       run: php cecil.phar build -vv demo
