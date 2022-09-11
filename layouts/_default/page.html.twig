@@ -25,8 +25,8 @@
               <p class="h2 mb-5">{{ site.baseline }}</p>
               {%- block content ~%}
               {%- if page.content is empty -%}
-              <p>Page not found.</p>
-              <p><a href="{{ url() }}">← Return</a></p>
+              <p>{% trans %}Page not found.{% endtrans %}</p>
+              <p><a href="{{ url() }}">← {% trans %}Return{% endtrans %}</a></p>
               {%- else -%}
               {{ page.content }}
               {%- endif -%}
