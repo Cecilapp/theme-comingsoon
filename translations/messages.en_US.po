@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-09-11 20:13+0200\n"
-"PO-Revision-Date: 2022-09-11 20:17+0200\n"
+"POT-Creation-Date: 2022-09-24 02:18+0200\n"
+"PO-Revision-Date: 2022-09-24 02:18+0200\n"
 "Last-Translator: Arnaud Ligny <arnaud@ligny.org>\n"
 "Language-Team: \n"
 "Language: en\n"
@@ -28,4 +28,4 @@ msgstr "Enter Email..."
 
 #: partials/subscribe.html.twig:5
 msgid "Notify me!"
-msgstr "Notify me"
+msgstr "Notify me!"
