@@ -38,9 +38,9 @@ jobs:
         echo -e "baseline: Sign up for updates" >> demo/config.yml
         echo -e "social:" >> demo/config.yml
         echo -e "  twitter:" >> demo/config.yml
-        echo -e "    site: ArnaudLigny" >> demo/config.yml
+        echo -e "    site: Cecil_Static" >> demo/config.yml
         echo -e "  github:" >> demo/config.yml
-        echo -e "    username: ArnaudLigny" >> demo/config.yml
+        echo -e "    username: Cecilapp" >> demo/config.yml
 
     - name: Add theme
       run: |
