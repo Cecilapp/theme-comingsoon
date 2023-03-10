@@ -1,74 +1,80 @@
-name: Test
+name: Test and build demo
 
-on: push
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
 
 jobs:
-  test-theme:
-    name: Test theme
+  build:
     runs-on: ubuntu-latest
     env:
-      CECIL_BASEURL: 'https://cecilapp.github.io/theme-comingsoon/'
-      CECIL_CANONICALURL: 'true'
-    environment: 
-      name: github-pages
-      url: ${{ steps.deploy_url.outputs.url }}
+      CECIL_BASEURL: https://cecilapp.github.io/theme-comingsoon/
+      CECIL_CANONICALURL: true
     steps:
-    - name: Download Cecil
-      run: |
-        curl -sSOL https://cecil.app/cecil.phar
-        php cecil.phar --version
+      - name: Download Cecil
+        run: |
+          curl -sSOL https://cecil.app/cecil.phar
+          php cecil.phar --version
 
-    - name: Create demo site
-      run: php cecil.phar new:site demo
+      - name: Create site
+        run: |
+          php cecil.phar new:site -n
 
-    - name: Install theme
-      uses: actions/checkout@master
-      with:
-        path: 'demo/themes/comingsoon'
+      - name: Install theme
+        uses: actions/checkout@master
+        with:
+          path: ./themes/comingsoon
 
-    - uses: actions/setup-node@v2
+      - name: Set config
+        run: |
+          echo -e "title: Coming Soon!" > config.yml
+          echo -e "baseline: Sign up for updates" >> config.yml
+          echo -e "social:" >> config.yml
+          echo -e "  twitter:" >> config.yml
+          echo -e "    site: Cecil_Static" >> config.yml
+          echo -e "  github:" >> config.yml
+          echo -e "    username: Cecilapp" >> config.yml
+          echo -e "comingsoon:" >> config.yml
+          echo -e "  subscribe:" >> config.yml
+          echo -e "    placeholder: Enter Email..." >> config.yml
+          echo -e "    button: Notify me!" >> config.yml
+      
+      - name: Add theme to configuration file
+        run: |
+          echo -e "theme:\n  - comingsoon" >> ./config.yml
+          rm -rf ./layouts
 
-    - name: Install Bootstrap
-      working-directory: demo/themes/comingsoon/static
-      run: npm install
+      - name: Add pages
+        run: |
+          echo -e "We're working hard to finish the development of this site.  \nOur target launch date is **January 2022!**  \nSign up for updates using the form below!" > pages/index.md
+          echo -e "**Thank you**, your submission has been received.\n\n← [Return](../)" > pages/success.md
 
-    - name: Set config
-      run: |
-        echo -e "title: Coming Soon!" > demo/config.yml
-        echo -e "baseline: Sign up for updates" >> demo/config.yml
-        echo -e "social:" >> demo/config.yml
-        echo -e "  twitter:" >> demo/config.yml
-        echo -e "    site: Cecil_Static" >> demo/config.yml
-        echo -e "  github:" >> demo/config.yml
-        echo -e "    username: Cecilapp" >> demo/config.yml
+      - name: Setup Pages
+        uses: actions/configure-pages@v2
 
-    - name: Add theme
-      run: |
-        echo -e "theme:\n  - comingsoon" >> demo/config.yml
-        echo -e "comingsoon:" >> demo/config.yml
-        echo -e "  subscribe:" >> demo/config.yml
-        echo -e "    placeholder: Enter Email..." >> demo/config.yml
-        echo -e "    button: Notify me!" >> demo/config.yml
-        rm -rf demo/layouts
+      - name: Build site
+        run: php cecil.phar build -vv
 
-    - name: Add pages
-      run: |
-        echo -e "We're working hard to finish the development of this site.  \nOur target launch date is **January 2022!**  \nSign up for updates using the form below!" > demo/pages/index.md
-        echo -e "**Thank you**, your submission has been received.\n\n← [Return](../)" > demo/pages/success.md
-        rm demo/pages/another-page.md
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
 
-    - name: Build
-      run: php cecil.phar build -vv demo
-
-    - name: Deploy
-      uses: Cecilapp/GitHub-Pages-deploy@v3
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        email: arnaud@ligny.org
-        build_dir: demo/_site
-
-    - name: Deploy URL
-      if: ${{ success() }}
-      id: deploy_url
-      run: echo "::set-output name=url::$CECIL_BASEURL"
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
