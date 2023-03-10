@@ -35,6 +35,12 @@ jobs:
         with:
           path: ./themes/comingsoon
 
+      - uses: actions/setup-node@v2
+
+      - name: Install Bootstrap
+        working-directory: themes/comingsoon/static
+        run: npm install
+
       - name: Set config
         run: |
           echo -e "title: Coming Soon!" > config.yml
