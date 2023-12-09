@@ -19,5 +19,16 @@
     "allow-plugins": {
       "cecil/theme-installer": true
     }
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "@post-cmd"
+    ],
+    "post-update-cmd": [
+      "@post-cmd"
+    ],
+    "post-cmd": [
+      "npm install --prefix ./static bootstrap@4.6.0"
+    ]
   }
 }
