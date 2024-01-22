@@ -19,5 +19,9 @@
     "allow-plugins": {
       "cecil/theme-installer": true
     }
+  },
+  "scripts": {
+    "post-install-cmd": "cd static && npm install",
+    "post-update-cmd": "cd static && npm update"
   }
 }
