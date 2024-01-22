@@ -5,7 +5,7 @@
   "keywords": ["Cecil", "theme", "coming soon"],
   "license": "MIT",
   "require": {
-    "cecil/theme-installer": "^1.4"
+    "cecil/theme-installer": "^2.0"
   },
   "extra": {
     "name": "comingsoon",
