@@ -14,7 +14,9 @@ composer require cecil/theme-comingsoon
 
 ### Install Bootstrap
 
-Run the following command:
+If [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) is available, Boostrap is automaticcally installed with the previous Composer command.
+
+You can also install it mannually with the following command:
 
 ```bash
 cd themes/comingsoon/static && npm install
