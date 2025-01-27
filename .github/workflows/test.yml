@@ -1,19 +1,15 @@
 name: Test and build demo
-
 on:
   push:
     branches: [main]
   workflow_dispatch:
-
 permissions:
   contents: read
   pages: write
   id-token: write
-
 concurrency:
   group: pages
   cancel-in-progress: true
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -21,26 +17,26 @@ jobs:
       CECIL_BASEURL: https://cecilapp.github.io/theme-comingsoon/
       CECIL_CANONICALURL: true
     steps:
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          coverage: none
       - name: Download Cecil
         run: |
           curl -sSOL https://cecil.app/cecil.phar
           php cecil.phar --version
-
       - name: Create site
         run: |
           php cecil.phar new:site -n
-
       - name: Install theme
         uses: actions/checkout@master
         with:
           path: ./themes/comingsoon
-
       - uses: actions/setup-node@v2
-
       - name: Install Bootstrap
         working-directory: themes/comingsoon/static
         run: npm install
-
       - name: Set config
         run: |
           echo -e "title: Coming Soon!" > config.yml
@@ -54,26 +50,20 @@ jobs:
           echo -e "  subscribe:" >> config.yml
           echo -e "    placeholder: Enter Email..." >> config.yml
           echo -e "    button: Notify me!" >> config.yml
-      
       - name: Add theme to configuration file
         run: |
           echo -e "theme:\n  - comingsoon" >> ./config.yml
           rm -rf ./layouts
-
       - name: Add pages
         run: |
           echo -e "We're working hard to finish the development of this site.  \nOur target launch date is **January 2024!**  \nSign up for updates using the form below!" > pages/index.md
           echo -e "**Thank you**, your submission has been received.\n\n← [Return](../)" > pages/success.md
-
       - name: Setup Pages
         uses: actions/configure-pages@v2
-
       - name: Build site
         run: php cecil.phar build -vv
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
-
   deploy:
     environment:
       name: github-pages
