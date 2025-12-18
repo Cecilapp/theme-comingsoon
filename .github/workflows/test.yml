@@ -30,10 +30,10 @@ jobs:
         run: |
           php cecil.phar new:site -n
       - name: Install theme
-        uses: actions/checkout@master
+        uses: actions/checkout@v6
         with:
           path: ./themes/comingsoon
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v6
       - name: Install Bootstrap
         working-directory: themes/comingsoon/static
         run: npm install
@@ -59,11 +59,11 @@ jobs:
           echo -e "We're working hard to finish the development of this site.  \nOur target launch date is **January 2024!**  \nSign up for updates using the form below!" > pages/index.md
           echo -e "**Thank you**, your submission has been received.\n\n← [Return](../)" > pages/success.md
       - name: Setup Pages
-        uses: actions/configure-pages@v2
+        uses: actions/configure-pages@v5
       - name: Build site
         run: php cecil.phar build -vv
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v4
   deploy:
     environment:
       name: github-pages
@@ -73,4 +73,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
