@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="{{ site.language }}">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    {%~ include 'partials/metatags.html.twig' ~%}
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico')|url }}" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {%- include 'partials/metatags.html.twig' ~%}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+    <link href="{{ asset('scss/styles.scss')|url }}" rel="stylesheet">
     <script src="{{ asset('https://use.fontawesome.com/releases/v5.15.3/js/all.js')|url }}" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
-    <link href="{{ asset('scss/styles.scss')|url }}" rel="stylesheet" />
   </head>
   <body>
     <div class="overlay"></div>
