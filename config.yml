@@ -1,16 +1,3 @@
 #assets:
 #  compile:
 #    import: [node_modules]
-
-pages:
-  default:
-    sitemap:
-      published: false
-    xsl/sitemap:
-      published: false
-    xsl/atom:
-      published: false
-
-output:
-  pagetypeformats:
-    homepage: [html]
